@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Administrado extends Model
 {
     use HasFactory;
+
 }
