@@ -52,20 +52,21 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('form', function(){
 		return view('Formulario.create');
 	});
-	Route::resource('administrados', AdministradoController::class);
-	Route::resource('areas', AreaController::class);
-	Route::resource('asignaciones', AsignacionController::class);
-	Route::resource('documentos', DocumentoController::class);
-	Route::resource('clases',ClaseController::class);
-	Route::resource('mesa-ayuda', DocumentoTempController::class);
-	Route::resource('indicaciones', DocumentoTempController::class);
-	Route::resource('movimientos', MovimientoController::class);
-	Route::resource('movimiento-externo', MovimientoExternoController::class);
-	Route::resource('movimiento-interno', MovimientoInternoController::class);
-	Route::resource('oficinas', OficinaController::class);
-	Route::resource('procedimientos', ProcedimientoController::class);
-	Route::resource('tipo-persona', TipoPersonaController::class);
-	Route::resource('tipo-documento', TipoDocumentoController::class);	
+
+	Route::resource('administrados', AdministradoController::class)->names('administrados');
+	Route::resource('areas', AreaController::class)->names('areas');
+	Route::resource('asignaciones', AsignacionController::class)->names('asignaciones');
+	Route::resource('documentos', DocumentoController::class)->names('documentos');
+	Route::resource('clases',ClaseController::class)->names('clases');
+	Route::resource('mesa-ayuda', DocumentoTempController::class)->names('mesa-ayuda');
+	Route::resource('indicaciones', DocumentoTempController::class)->names('indicaciones');
+	Route::resource('movimientos', MovimientoController::class)->names('movimientos');
+	Route::resource('movimiento-externo', MovimientoExternoController::class)->names('movimiento-externo');
+	Route::resource('movimiento-interno', MovimientoInternoController::class)->names('movimiento-interno');
+	Route::resource('oficinas', OficinaController::class)->names('oficinas');
+	Route::resource('procedimientos', ProcedimientoController::class)->names('procedimientos');
+	Route::resource('tipo-persona', TipoPersonaController::class)->names('tipo-persona');
+	Route::resource('tipo-documento', TipoDocumentoController::class)->names('tipo-documento');	
 });
 
 

@@ -110,6 +110,11 @@
                         <i class="ni ni-planet text-blue"></i> {{ __('Icons') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('administrados.index') }}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('Administrados') }}
+                    </a>
+                </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="{{ route('map') }}">
                         <i class="ni ni-pin-3 text-orange"></i> {{ __('Maps') }}
