@@ -11,5 +11,8 @@ class Clase extends Model
     protected $fillable = [
         'nombre',
     ];
-
+    public function procedimiento()
+    {
+        return $this->hasMany(Procedimiento::class);
+    }
 }

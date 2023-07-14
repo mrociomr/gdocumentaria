@@ -11,4 +11,8 @@ class Area extends Model
     protected $fillable = [
         'nombre',
     ];
+    public function oficina()
+    {
+        return $this->hasMany(Oficina::class);
+    }
 }

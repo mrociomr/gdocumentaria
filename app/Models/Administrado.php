@@ -20,4 +20,18 @@ class Administrado extends Model
         'departamento'
     ];
 
+    public function tipo_persona()
+    {
+        return $this->belongsTo(TipoPersona::class);
+    }
+    public function documento_temp()
+    {
+        return $this->hasMany(DocumentoTemp::class);
+    }
+
+    public function documento()
+    {
+        return $this->hasMany(Documento::class);
+    }
+
 }
