@@ -54,7 +54,7 @@ Route::group(['middleware' => 'auth'], function () {
 	});
 	Route::resource('administrados', AdministradoController::class);
 	Route::resource('areas', AreaController::class);
-	Route::resource('asignacion', AsignacionController::class);
+	Route::resource('asignaciones', AsignacionController::class);
 	Route::resource('documentos', DocumentoController::class);
 	Route::resource('clases',ClaseController::class);
 	Route::resource('documentos-temp', DocumentoController::class);
