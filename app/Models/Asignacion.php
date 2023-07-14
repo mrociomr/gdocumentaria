@@ -11,4 +11,14 @@ class Asignacion extends Model
     protected $fillable = [
         'nombre',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function documento()
+    {
+        return $this->hasMany(Documento::class);
+    }
 }

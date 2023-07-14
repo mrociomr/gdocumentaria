@@ -20,4 +20,21 @@ class DocumentoTemp extends Model
         'procedimiento_id',
         'oficina_id'
     ];
+
+    public function tipo_documento()
+    {
+        return $this->belongsTo(TipoDocumento::class);
+    }
+    public function administrado()
+    {
+        return $this->belongsTo(Administrado::class);
+    }
+    public function procedimiento()
+    {
+        return $this->belongsTo(Procedimiento::class);
+    }
+    public function oficina()
+    {
+        return $this->belongsTo(Oficina::class);
+    }
 }

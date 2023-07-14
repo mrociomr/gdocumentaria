@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class MovimientoInterno extends Model
 {
     use HasFactory;
+
+    public function movimiento()
+    {
+        return $this->hasMany(Movimiento::class);
+    }
 }

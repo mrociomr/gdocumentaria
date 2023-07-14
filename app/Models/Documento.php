@@ -27,4 +27,38 @@ class Documento extends Model
         'asignacion_id',
         'movimiento_id'
     ];
+
+    public function administrado()
+    {
+        return $this->belongsTo(Administrado::class);
+    }
+
+    public function tipo_documento()
+    {
+        return $this->belongsTo(TipoDocumento::class);
+    }
+
+    public function indicacion()
+    {
+        return $this->belongsTo(Indicacion::class);
+    }
+    public function procedimiento()
+    {
+        return $this->belongsTo(Procedimiento::class);
+    }
+
+    public function oficina()
+    {
+        return $this->belongsTo(Oficina::class);
+    }
+
+    public function asignacion()
+    {
+        return $this->belongsTo(Asignacion::class);
+    }
+
+    public function movimiento()
+    {
+        return $this->belongsTo(Movimiento::class);
+    }
 }
