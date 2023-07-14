@@ -41,10 +41,10 @@ class IndicacionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Indicacion  $indicacion
+     * @param  \App\Models\Indicacion  $indicacione
      * @return \Illuminate\Http\Response
      */
-    public function show(Indicacion $indicacion)
+    public function show(Indicacion $indicacione)
     {
         //
     }
@@ -52,10 +52,10 @@ class IndicacionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Indicacion  $indicacion
+     * @param  \App\Models\Indicacion  $indicacione
      * @return \Illuminate\Http\Response
      */
-    public function edit(Indicacion $indicacion)
+    public function edit(Indicacion $indicacione)
     {
         //
     }
@@ -67,7 +67,7 @@ class IndicacionController extends Controller
      * @param  \App\Models\Indicacion  $indicacion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Indicacion $indicacion)
+    public function update(Request $request, Indicacion $indicacione)
     {
         //
     }
@@ -78,7 +78,7 @@ class IndicacionController extends Controller
      * @param  \App\Models\Indicacion  $indicacion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Indicacion $indicacion)
+    public function destroy(Indicacion $indicacione)
     {
         //
     }
