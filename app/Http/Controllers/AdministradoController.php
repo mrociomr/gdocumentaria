@@ -1,21 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Administrado;
 use Illuminate\Http\Request;
 
 
 class AdministradoController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $administrados = Administrado::all();
+        return view('administrado.index', compact('administrados'));
     }
+
 
     /**
      * Show the form for creating a new resource.
