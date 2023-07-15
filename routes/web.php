@@ -53,7 +53,6 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('Formulario.create');
 	});
  
-
 	Route::resource('administrados', AdministradoController::class)->names('administrados');
 	Route::resource('areas', AreaController::class)->names('areas');
 	Route::resource('asignaciones', AsignacionController::class)->names('asignaciones');

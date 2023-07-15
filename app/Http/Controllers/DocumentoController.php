@@ -13,7 +13,7 @@ class DocumentoController extends Controller
      */
     public function index()
     {
-        //
+        return view('documento.index');
     }
 
     /**

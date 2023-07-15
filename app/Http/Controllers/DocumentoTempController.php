@@ -13,7 +13,7 @@ class DocumentoTempController extends Controller
      */
     public function index()
     {
-        //
+        return view('mesa-ayuda.index');
     }
 
     /**

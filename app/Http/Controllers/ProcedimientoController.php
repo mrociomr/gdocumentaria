@@ -13,7 +13,7 @@ class ProcedimientoController extends Controller
      */
     public function index()
     {
-        //
+        return view('procedimiento.index');
     }
 
     /**

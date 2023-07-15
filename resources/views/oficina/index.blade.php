@@ -1,0 +1,1 @@
+@extends('layouts.app', ['title' => __('User Profile')])
