@@ -14,7 +14,8 @@ class ClaseController extends Controller
      */
     public function index()
     {
-        return view('clase.index');
+        $clases = Clase::all();
+        return view('clase.index', compact('clases'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ClaseController extends Controller
      */
     public function create()
     {
-        //
+        return view('clase.create');
     }
 
     /**
@@ -35,7 +36,14 @@ class ClaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            // Agrega aquí las reglas de validación para los demás campos del formulario
+        ]);
+
+        $clase = Clase::create($request->all());
+
+        return redirect()->route('clase.index')->with('success', 'Clase creada correctamente');
     }
 
     /**
