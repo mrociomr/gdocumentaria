@@ -115,6 +115,12 @@
                     </a>
                 </li>
                 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('areas.index') }}">
+                        <i class="ni ni-planet text-blue"></i> {{ __('Áreas') }}
+                    </a>
+                </li>
+
                 <li class="nav-item ">
                     <a class="nav-link" href="{{ route('clases.index') }}">
                         <i class="ni ni-pin-3 text-orange"></i> {{ __('Clases') }}

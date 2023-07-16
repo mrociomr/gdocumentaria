@@ -10,11 +10,11 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header border-0">
-              <h3 class="mb-0">Light table</h3>
+              <h3 class="mb-0">Áreas</h3>
               <div class="row justify-content-end">
             <div class="col-lg-6 col-5 text-right mt--4">
-                    <a href="{{ route('oficinas.create') }}" class="btn btn-sm btn-neutral">Nuevo</a>
-                    <a href="#" class="btn btn-sm btn-neutral">Filtros</a>
+                    <a href=" {{ route('areas.create')}}" class="btn btn-sm btn-neutral">New</a>
+                    <a href="#" class="btn btn-sm btn-neutral">Filters</a>
             </div>
             </div>
 
@@ -30,24 +30,24 @@
                   </tr>
                 </thead>
                 <tbody class="list">
-                @foreach ($oficinas as $oficina)
+                @foreach ($areas as $area)
 
                   <tr>
 
                     <td class="budget">
-                    {{ $oficina->id }}
+                    {{ $area->id }}
                     </td>
                     <td class="budget">
-                    {{ $oficina->nombre }}
+                    {{ $area->nombre }}
                     </td>
                     <td class="text-right">
                       <div class="dropdown">
                         <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i class="fas fa-ellipsis-v"></i>
                         </a>
-                        <a href="{{route('oficinas.edit', $oficina->id)}}" class="btn btn-primary">
+                        <a href="{{route('areas.edit', $area->id)}}" class="btn btn-primary">
                         <i class="fas fa-pen" style="color: #ffffff;"></i></a>
-                        <form method="POST" action="{{ route('oficinas.destroy', $oficina) }}" style="display: inline-block;">
+                        <form method="POST" action="{{ route('areas.destroy', $area) }}" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" >
@@ -58,7 +58,6 @@
                       </div>
                     </td>
                 </tr>
-
                 @endforeach
 
                 </tbody>

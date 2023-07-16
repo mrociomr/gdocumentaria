@@ -9,13 +9,13 @@ class Oficina extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'area_id',
         'nombre',
     ];
 
     public function area()
     {
-        return $this->belongsTo(Area::class);
+        //return $this->hasMany(Area::class);
+        return $this->hasMany(Area::class);
     }
 
     public function documento_temp()

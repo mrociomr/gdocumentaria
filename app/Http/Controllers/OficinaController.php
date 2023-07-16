@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Oficina;
+use App\Models\Area;
 use Illuminate\Http\Request;
 
 class OficinaController extends Controller
@@ -13,7 +14,8 @@ class OficinaController extends Controller
      */
     public function index()
     {
-        return view('oficina.index');
+        $oficinas['oficinas'] = Oficina::paginate(100);
+        return view('oficina.index', $oficinas);
     }
 
     /**
@@ -23,7 +25,8 @@ class OficinaController extends Controller
      */
     public function create()
     {
-        //
+        $nueva_oficina = Oficina::all();
+        return view('oficina.form.create', compact('nueva_oficina'));
     }
 
     /**
@@ -34,7 +37,18 @@ class OficinaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+        ]);
+
+        $oficina = new Oficina();
+
+        $oficina->nombre = $request->nombre;
+        
+        $oficina->save();
+
+        return redirect()->route('oficinas.index');
+
     }
 
     /**
@@ -45,7 +59,7 @@ class OficinaController extends Controller
      */
     public function show(Oficina $oficina)
     {
-        //
+        
     }
 
     /**
@@ -56,7 +70,7 @@ class OficinaController extends Controller
      */
     public function edit(Oficina $oficina)
     {
-        //
+        return view('oficina.form.edit', compact('oficina'));
     }
 
     /**
@@ -68,7 +82,15 @@ class OficinaController extends Controller
      */
     public function update(Request $request, Oficina $oficina)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+        ]);
+
+        $oficina->nombre = $request->nombre;
+
+        $oficina->save();
+
+        return redirect()->route('oficinas.index');
     }
 
     /**
@@ -77,8 +99,10 @@ class OficinaController extends Controller
      * @param  \App\Models\Oficina  $oficina
      * @return \Illuminate\Http\Oficina
      */
-    public function destroy(Oficina $oficina)
+    public function destroy($id)
     {
-        //
+        Oficina::destroy($id);
+
+        return redirect('oficinas')->with('eliminar', 'delete');
     }
 }

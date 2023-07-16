@@ -10,9 +10,11 @@ class Area extends Model
     use HasFactory;
     protected $fillable = [
         'nombre',
+    
     ];
     public function oficina()
     {
-        return $this->hasMany(Oficina::class);
+        //return $this->hasMany(Oficina::class);
+        return $this->belongsTo(Oficina::class);
     }
 }

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('users.partials.header', [
+        'title' => __('Bienvenido,') . ' ' . auth()->user()->name,
+    ])    
     @include('layouts.headers.cards')
 
     <div class="container-fluid mt--7">

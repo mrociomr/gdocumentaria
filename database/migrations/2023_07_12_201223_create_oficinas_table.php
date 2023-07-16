@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('oficinas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('area_id')->constrained('areas')->onDelete('cascade');
             $table->string('nombre');
             $table->timestamps();
         });
