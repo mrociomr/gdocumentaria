@@ -4,82 +4,69 @@ namespace App\Http\Controllers;
 
 use App\Models\Indicacion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class IndicacionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $indicaciones = Indicacion::all();
+
+        return view('indicaciones.index', compact('indicaciones'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
-        //
+        return view('indicaciones.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+  
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required'
+        ]);
+        
+        $indicacion = new Indicacion();
+        $indicacion->nombre = $request->nombre;
+
+        $indicacion->save();
+
+        return Redirect::route('indicaciones.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Indicacion  $indicacione
-     * @return \Illuminate\Http\Response
-     */
+  
     public function show(Indicacion $indicacione)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Indicacion  $indicacione
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Indicacion $indicacione)
     {
-        //
+        return view('indicaciones.edit', compact('indicacione'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Indicacion  $indicacion
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function update(Request $request, Indicacion $indicacione)
     {
-        //
+        $request->validate([
+            'nombre' => 'required'
+        ]);
+        
+        $indicacione->nombre = $request->nombre;
+
+        $indicacione->save();
+
+        return Redirect::route('indicaciones.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Indicacion  $indicacion
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Indicacion $indicacione)
     {
-        //
+        $indicacione->delete();
+
+        return Redirect::back();
     }
 }

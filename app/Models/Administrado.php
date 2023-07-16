@@ -10,6 +10,7 @@ class Administrado extends Model
     use HasFactory;
 
     protected $fillable = [
+        'nombres',
         'dni',
         'ap_paterno',
         'ap_materno',
@@ -17,8 +18,15 @@ class Administrado extends Model
         'correo',
         'celular',
         'razon_social',
-        'departamento'
+        'tipo_persona_id',
     ];
+
+    // public static $rules = [
+        
+        // 'razon_social' => 'required',
+        // 'departamento' => 'required',
+        // 'tipo_persona_id' => 'required',
+    // ];
 
     public function tipo_persona()
     {

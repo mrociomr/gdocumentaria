@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('procedimientos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->integer('tiempo_respuesta');
+            $table->integer('tiempo_respuesta')->nullable();
             $table->timestamps();
         });
     }
