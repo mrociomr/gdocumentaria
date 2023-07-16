@@ -28,6 +28,33 @@ class Documento extends Model
         'movimiento_id'
     ];
 
+    public static $rule = [
+        'nombres' => 'required',
+        'dni' => 'required|numeric|min:8',
+        'ap_paterno' => 'required',
+        'ap_materno' => 'required',
+        'direccion' => 'required',
+        'correo' => 'required',
+        'celular' => 'required',
+        // 'numero_doc' => 'required',
+        'folios' => 'required',
+        'asunto' => 'required',
+        'archivo' => 'required|max:2048',
+        'fecha_ingreso' => 'required',
+        'fecha_doc' => 'required',
+        'num_tramite' => 'required',
+        'observaciones' => 'required',
+        'estado' => 'required',
+        'inf_respuesta' => 'required',
+        // 'administrado_id' => 'required',
+        // 'tipo_documento_id' => 'required',
+        // 'indicacion_id' => 'required',
+        // 'procedimiento_id' => 'required',
+        // 'oficina_id' => 'required',
+        // 'asignacion_id' => 'required',
+        // 'movimiento_id' => 'required',
+    ];
+
     public function administrado()
     {
         return $this->belongsTo(Administrado::class);
@@ -60,5 +87,17 @@ class Documento extends Model
     public function movimiento()
     {
         return $this->belongsTo(Movimiento::class);
+    }
+
+    public function incremento()
+    {
+        $contador = Documento::latest()->first()->numero_doc??null;
+        if($contador==null){
+            return 1;
+        }else{
+            return $contador = $contador + 1;
+        }
+
+        // return $contador;
     }
 }

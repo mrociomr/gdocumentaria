@@ -14,12 +14,12 @@ return new class extends Migration {
     {
         Schema::create('documentos', function (Blueprint $table) {
             $table->id();
-            $table->string('numero_doc');
+            $table->integer('numero_doc')->nullable();
             $table->integer('folios');
             $table->string('asunto');
-            $table->string('archivo');
-            $table->dateTime('fecha_ingreso');
-            $table->dateTime('fecha_doc');
+            $table->string('archivo')->nullable();
+            $table->timestamp('fecha_ingreso');
+            $table->timestamp('fecha_doc');
             $table->integer('num_tramite');
             $table->string('observaciones');
             $table->string('estado');
@@ -30,7 +30,7 @@ return new class extends Migration {
             $table->foreignId('procedimiento_id')->constrained('procedimientos')->onDelete('cascade');
             $table->foreignId('oficina_id')->constrained('oficinas')->onDelete('cascade');
             $table->foreignId('asignacion_id')->constrained('asignacions')->onDelete('cascade');
-            $table->foreignId('movimiento_id')->constrained('movimientos')->onDelete('cascade');
+            $table->foreignId('movimiento_id')->nullable()->constrained('movimientos')->onDelete('cascade');
             $table->timestamps();
         });
     }

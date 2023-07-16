@@ -114,13 +114,21 @@
                         <i class="ni ni-planet text-blue"></i> {{ __('Oficinas') }}
                     </a>
                 </li>
-                
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('areas.index') }}">
                         <i class="ni ni-planet text-blue"></i> {{ __('Áreas') }}
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('indicaciones.index') }}">
+                        <i class="ni ni-align-center text-blue"></i> {{ __('Indicaciones') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('asignaciones.index') }}">
+                        <i class="ni ni-check-bold text-blue"></i> {{ __('Asignaciones') }}
+                    </a>
+                </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="{{ route('clases.index') }}">
                         <i class="ni ni-pin-3 text-orange"></i> {{ __('Clases') }}

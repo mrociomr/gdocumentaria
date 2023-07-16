@@ -56,10 +56,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('administrados', AdministradoController::class)->names('administrados');
 	Route::resource('areas', AreaController::class)->names('areas');
 	Route::resource('asignaciones', AsignacionController::class)->names('asignaciones');
-	Route::resource('documentos', DocumentoController::class)->names('documentos');
+	Route::resource('documentos', DocumentoController::class);
 	Route::resource('clases',ClaseController::class)->names('clases');
 	Route::resource('mesa-ayuda', DocumentoTempController::class)->names('mesa-ayuda');
-	Route::resource('indicaciones', DocumentoTempController::class)->names('indicaciones');
+	Route::resource('indicaciones', IndicacionController::class);
 	Route::resource('movimientos', MovimientoController::class)->names('movimientos');
 	Route::resource('movimiento-externo', MovimientoExternoController::class)->names('movimiento-externo');
 	Route::resource('movimiento-interno', MovimientoInternoController::class)->names('movimiento-interno');
