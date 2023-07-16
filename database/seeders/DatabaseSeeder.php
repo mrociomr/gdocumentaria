@@ -31,12 +31,12 @@ class DatabaseSeeder extends Seeder
             'nombre' => 'Persona Júridica'
         ]);
 
-        Administrado::factory()->count(10)->create();
-        TipoDocumento::factory()->count(10)->create();
-        Indicacion::factory()->count(10)->create();
-        Procedimiento::factory()->count(10)->create();
-        Oficina::factory()->count(10)->create();
-        Asignacion::factory()->count(10)->create();
+        // Administrado::factory()->count(10)->create();
+        // TipoDocumento::factory()->count(10)->create();
+        // Indicacion::factory()->count(10)->create();
+        // Procedimiento::factory()->count(10)->create();
+        // Oficina::factory()->count(10)->create();
+        // Asignacion::factory()->count(10)->create();
 
     }
 }
