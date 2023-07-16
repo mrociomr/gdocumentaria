@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Area;
 use App\Models\Oficina;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class AreaController extends Controller
 {
@@ -15,8 +16,8 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $areas['areas'] = Area::paginate(100);
-        return view('area.index', $areas);
+        $areas = Area::all();
+        return view('area.index', compact('areas'));
     }
 
     /**
@@ -28,7 +29,6 @@ class AreaController extends Controller
     {
         $oficinas = Oficina::all();
 
-        //$nueva_area = Area::all();
         return view('area.form.create', compact('oficinas'));
     }
 
@@ -42,7 +42,7 @@ class AreaController extends Controller
     {
         $request->validate([
             'nombre' => 'required',
-           // 'oficina_id' => 'required|exists:oficinas, id',
+            //'oficina_id' => 'required|exists:oficinas, id',
         ]);
 
         $area = new Area();
@@ -51,7 +51,7 @@ class AreaController extends Controller
 
         $area->save();
 
-        return redirect()->route('areas.index', $area);
+        return redirect()->route('areas.index');
     }
 
     /**
@@ -74,6 +74,7 @@ class AreaController extends Controller
     public function edit(Area $area)
     {
         $oficinas = Oficina::all();
+
         return view('area.form.edit', compact('area', 'oficinas'));
     }
 
@@ -86,12 +87,14 @@ class AreaController extends Controller
      */
     public function update(Request $request, Area $area)
     {
+
         $request->validate([
             'nombre' => 'required',
         ]);
 
         $area->nombre = $request->nombre;
         $area->oficina_id = $request->oficina_id;
+
         $area->save();
 
         return redirect()->route('areas.index');
@@ -103,10 +106,10 @@ class AreaController extends Controller
      * @param  \App\Models\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Area $area)
     {
-        Oficina::destroy($id);
+        $area->delete();
 
-        return redirect('areas')->with('eliminar', 'delete');
+        return Redirect::back();
     }
 }

@@ -1,4 +1,6 @@
-@extends('layouts.app', ['title' => __('User Profile')])
+@extends('layouts.app')
+
+@section('title', 'GDU | Oficinas')
 
 @section('content')
 @include('layouts.headers.cardsnav')
@@ -10,11 +12,11 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header border-0">
-              <h3 class="mb-0">Light table</h3>
+              <h3 class="mb-0">Lista de oficinas</h3>
               <div class="row justify-content-end">
             <div class="col-lg-6 col-5 text-right mt--4">
-                    <a href="{{ route('oficinas.create') }}" class="btn btn-sm btn-neutral">Nuevo</a>
-                    <a href="#" class="btn btn-sm btn-neutral">Filtros</a>
+                    <a href="{{ route('oficinas.create') }}" class="btn btn-success">Nuevo</a>
+                    <a href="#" class="btn btn-secondary">Filtros</a>
             </div>
             </div>
 
@@ -26,8 +28,11 @@
                 <thead class="thead-light">
                   <tr>
                   <th scope="col">ID</th>
-                    <th scope="col" class="sort" data-sort="name">Nombre</th>
+                  <th scope="col" class="sort" data-sort="name">Nombre</th>
+                  <th scope="col" class="sort" data-sort="name">Opciones</th>
                   </tr>
+                    
+             
                 </thead>
                 <tbody class="list">
                 @foreach ($oficinas as $oficina)
@@ -71,7 +76,7 @@
                   <li class="page-item disabled">
                     <a class="page-link" href="#" tabindex="-1">
                       <i class="fas fa-angle-left"></i>
-                      <span class="sr-only">Previous</span>
+                      <span class="sr-only">Anterior</span>
                     </a>
                   </li>
                   <li class="page-item active">
@@ -84,7 +89,7 @@
                   <li class="page-item">
                     <a class="page-link" href="#">
                       <i class="fas fa-angle-right"></i>
-                      <span class="sr-only">Next</span>
+                      <span class="sr-only">Siguiente</span>
                     </a>
                   </li>
                 </ul>
@@ -92,37 +97,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- Footer -->
-      <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-          <div class="col-lg-6">
-        <div class="copyright text-center text-xl-left text-muted">
-            &copy; {{ now()->year }} <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a> &amp;
-            <a href="https://www.updivision.com" class="font-weight-bold ml-1" target="_blank">Updivision</a>
-        </div>
-          </div>
-    <div class="col-xl-6">
-        <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-            <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-            </li>
-            <li class="nav-item">
-                <a href="https://www.updivision.com" class="nav-link" target="_blank">Updivision</a>
-            </li>
-            <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
-            </li>
-        </ul>
-    </div>
-        </div>
-      </footer>
+      </div>      
     </div>
 
   </div>

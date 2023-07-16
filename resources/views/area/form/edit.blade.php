@@ -48,17 +48,18 @@
                                 <div class="pl-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label">Oficina</label>
-                                        <select class="form-control" name="oficina_id" value="{{ old('oficina_id')}} " id="oficina">
+                                        <select class="form-control" name="oficina_id" id="oficina">
                                           @foreach ($oficinas as $oficina)
-                                            <option value="{{$oficina->id}}">{{ $oficina->nombre }}</option>   
+                                          <option value="{{ $oficina->id }}" {{ old('oficina_id', $area->oficina_id) == $oficina->id ? 'selected' : '' }}>
+                                            {{ $oficina->nombre }}
+                                        </option>
                                           @endforeach
                                         </select>
                                         
-                                    
-                                    </div>
+                          
                                     </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">Crear</button>
+                                    <button type="submit" class="btn btn-success mt-4">Guardar</button>
                                     <a href=" {{ route('areas.index') }}" class="btn btn-danger mt-4">Cancelar</a>
                                 </div>
                             </div>
@@ -67,7 +68,6 @@
 
                 </div>
             </div>
-            @include('layouts.footers.auth')
 
         </div>
     </div>

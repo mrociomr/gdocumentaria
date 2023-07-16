@@ -67,7 +67,7 @@ class DocumentoController extends Controller
         $documento->folios = $request->folios;
         $documento->asunto = $request->asunto;
         $documento->fecha_ingreso = $request->fecha_ingreso;
-        $documento->fecha_doc = $request->fecha_doc;
+        //$documento->fecha_doc = $request->fecha_doc;
         $documento->num_tramite = $request->num_tramite;
         $documento->observaciones = $request->observaciones;
         $documento->estado = $request->estado;
@@ -78,7 +78,7 @@ class DocumentoController extends Controller
         $documento->procedimiento_id = $request->procedimiento_id;
         $documento->oficina_id = $request->oficina_id;
         $documento->asignacion_id = $request->asignacion_id;
-        $documento->movimiento_id = $request->movimiento_id;
+        //$documento->movimiento_id = $request->movimiento_id;
         
         // }
 
@@ -163,4 +163,10 @@ class DocumentoController extends Controller
 
         return Redirect::back();
     }
+
+  
+
+    
+
+
 }

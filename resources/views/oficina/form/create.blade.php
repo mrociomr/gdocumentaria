@@ -30,7 +30,7 @@
                 <div class="card bg-secondary shadow">
                     <div class="card-header bg-white border-0">
                         <div class="d-flex justify-content-center">
-                            <h3 class="mb-1 align-items-center text-center">Registrar Oficinas</h3>
+                            <h3 class="mb-1 align-items-center text-center">Registrar Oficina</h3>
                         </div>
                     </div>
                     <div class="card-body">

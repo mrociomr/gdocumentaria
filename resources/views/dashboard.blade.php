@@ -2,7 +2,7 @@
 
 @section('content')
     @include('users.partials.header', [
-        'title' => __('Bienvenido,') . ' ' . auth()->user()->name,
+        'title' => __('Bienvenido(a),') . ' ' . auth()->user()->name,
     ])    
     @include('layouts.headers.cards')
 
